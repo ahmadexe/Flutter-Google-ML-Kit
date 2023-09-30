@@ -5,6 +5,7 @@ import 'package:ml_kit/firebase_options.dart';
 import 'package:ml_kit/screens/dashboard.dart';
 import 'package:provider/provider.dart';
 
+import 'blocs/text_recognition/text_recognition_bloc.dart';
 import 'providers/app_providers.dart';
 
 void main(List<String> args) async {
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AppProvider()),
+        BlocProvider(create: (_) => TextRecognitionBloc()),
       ],
       child: const MaterialApp(
         title: 'ML Kit',
