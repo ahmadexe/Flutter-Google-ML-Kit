@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'ML Kit',
       home: DashboardScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ml_kit/screens/text_recognition.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -15,7 +16,13 @@ class DashboardScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const TextRecognitionScreen(),
+                  ),
+                );
+              },
               child: const Text('Text Recognition'),
             ),
             const SizedBox(height: 16),
