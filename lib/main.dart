@@ -1,7 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ml_kit/firebase_options.dart';
 import 'package:ml_kit/screens/dashboard.dart';
+import 'package:provider/provider.dart';
+
+import 'providers/app_providers.dart';
 
 void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,10 +20,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'ML Kit',
-      home: DashboardScreen(),
-      debugShowCheckedModeBanner: false,
+    return MultiBlocProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AppProvider()),
+      ],
+      child: const MaterialApp(
+        title: 'ML Kit',
+        home: DashboardScreen(),
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }
