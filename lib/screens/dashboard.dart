@@ -9,8 +9,32 @@ class DashboardScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('ML Kit'),
       ),
-      body: const Center(
-        child: Text('Dashboard'),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Text Recognition'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Face Detection'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Barcode Scanning'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Image Labeling'),
+            ),
+          ],
+        ),
       ),
     );
   }
