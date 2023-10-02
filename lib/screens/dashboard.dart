@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ml_kit/screens/face_detection.dart';
 import 'package:ml_kit/screens/text_recognition.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -27,7 +28,13 @@ class DashboardScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const FaceRecognitionScreen(),
+                  ),
+                );
+              },
               child: const Text('Face Detection'),
             ),
             const SizedBox(height: 16),

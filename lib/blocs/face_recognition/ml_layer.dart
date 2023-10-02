@@ -5,9 +5,9 @@ class FaceRecognitionModel {
     enableContours: true,
     enableLandmarks: true,
   );
-  final _faceDetector = FaceDetector(options: _options);
+  static final _faceDetector = FaceDetector(options: _options);
 
-  Future<List<Face>> recognizeFaces(InputImage inputImage) async {
+  static Future<List<Face>> recognizeFaces(InputImage inputImage) async {
     try {
       final faces = await _faceDetector.processImage(inputImage);
       return faces;

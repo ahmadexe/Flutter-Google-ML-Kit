@@ -1,7 +1,9 @@
+import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
 
 import 'package:camera/camera.dart';
+import 'package:flutter/material.dart';
 import 'package:google_ml_kit/google_ml_kit.dart';
 
 class FaceRecognitionUtils {
@@ -51,4 +53,18 @@ class FaceRecognitionUtils {
         return y * canvasSize.height / imageSize.height;
     }
   }
+
+  static Future<Size> calculateImageDimension(Image image) {
+  Completer<Size> completer = Completer();
+  image.image.resolve(const ImageConfiguration()).addListener(
+    ImageStreamListener(
+      (ImageInfo image, bool synchronousCall) {
+        var myImage = image.image;
+        Size size = Size(myImage.width.toDouble(), myImage.height.toDouble());
+        completer.complete(size);
+      },
+    ),
+  );
+  return completer.future;
+}
 }
