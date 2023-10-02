@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_ml_kit/google_ml_kit.dart';
-import 'package:ml_kit/blocs/text_recognition/model_layer.dart';
+import 'package:ml_kit/blocs/text_recognition/ml_layer.dart';
 
 part 'text_recognition_event.dart';
 part 'text_recognition_state.dart';
