@@ -6,7 +6,7 @@ class AppProvider extends ChangeNotifier {
   XFile? image;
   bool picked = false;
   InputImage? inputImage;
-  
+
   void pickImage() async {
     final imagePicker = ImagePicker();
     image = await imagePicker.pickImage(source: ImageSource.gallery);

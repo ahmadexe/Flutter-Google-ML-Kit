@@ -8,9 +8,9 @@ class RectanglePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
-      ..color = Colors.blue 
-      ..style = PaintingStyle.stroke 
-      ..strokeWidth = 2.0; 
+      ..color = Colors.blue
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2.0;
 
     canvas.drawRect(rect, paint);
   }
