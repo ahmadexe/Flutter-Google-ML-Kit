@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => FaceRecognitionBloc()),
       ],
       child: const MaterialApp(
-        title: 'ML Kit',
+        title: 'ML Kit Changed',
         home: DashboardScreen(),
         debugShowCheckedModeBanner: false,
       ),
