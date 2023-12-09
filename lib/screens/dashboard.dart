@@ -37,16 +37,16 @@ class DashboardScreen extends StatelessWidget {
               },
               child: const Text('Face Detection'),
             ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Barcode Scanning'),
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Image Labeling'),
-            ),
+            // const SizedBox(height: 16),
+            // ElevatedButton(
+            //   onPressed: () {},
+            //   child: const Text('Barcode Scanning'),
+            // ),
+            // const SizedBox(height: 16),
+            // ElevatedButton(
+            //   onPressed: () {},
+            //   child: const Text('Image Labeling'),
+            // ),
           ],
         ),
       ),

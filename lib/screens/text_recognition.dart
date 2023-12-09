@@ -34,48 +34,50 @@ class TextRecognitionScreen extends StatelessWidget {
         ),
         body: appProvider.image != null
             ? Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.file(File(appProvider.image!.path)),
-                    const SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        textRecognitionBloc.add(
-                          RecognizeTextEvent(
-                            inputImage: appProvider.inputImage!,
-                          ),
-                        );
-                      },
-                      child: const Text('Recognize Text'),
-                    ),
-                    const SizedBox(height: 20),
-                    BlocBuilder<TextRecognitionBloc, TextRecognitionState>(
-                      builder: (context, state) {
-                        if (state is TextRecognitionSuccess) {
-                          return Text(
-                            state.text!,
-                            style: const TextStyle(
-                              fontSize: 20,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.file(File(appProvider.image!.path)),
+                      const SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: () {
+                          textRecognitionBloc.add(
+                            RecognizeTextEvent(
+                              inputImage: appProvider.inputImage!,
                             ),
                           );
-                        } else if (state is TextRecognitionFailure) {
-                          return Text(
-                            state.error!,
-                            style: const TextStyle(
-                              fontSize: 20,
-                            ),
-                          );
-                        } else if (state is TextRecognitionLoading) {
-                          return const Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        } else {
-                          return const SizedBox.shrink();
-                        }
-                      },
-                    )
-                  ],
+                        },
+                        child: const Text('Recognize Text'),
+                      ),
+                      const SizedBox(height: 20),
+                      BlocBuilder<TextRecognitionBloc, TextRecognitionState>(
+                        builder: (context, state) {
+                          if (state is TextRecognitionSuccess) {
+                            return Text(
+                              state.text!,
+                              style: const TextStyle(
+                                fontSize: 20,
+                              ),
+                            );
+                          } else if (state is TextRecognitionFailure) {
+                            return Text(
+                              state.error!,
+                              style: const TextStyle(
+                                fontSize: 20,
+                              ),
+                            );
+                          } else if (state is TextRecognitionLoading) {
+                            return const Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          } else {
+                            return const SizedBox.shrink();
+                          }
+                        },
+                      )
+                    ],
+                  ),
                 ),
               )
             : const Center(
